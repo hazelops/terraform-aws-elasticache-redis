@@ -59,7 +59,7 @@ module "elasticache_redis" {
   apply_immediately          = true
   family                     = "redis5.0"
   description                = "This is example"
-  parameter = [
+  parameters = [
     {
       name  = "notify-keyspace-events"
       value = "AKE"

@@ -98,11 +98,11 @@ resource "aws_elasticache_parameter_group" "default" {
   family      = var.family
   description = var.description
 
-  dynamic "parameters" {
+  dynamic "parameter" {
     for_each =  var.parameters
     content {
-      name  = parameters.value.name
-      value = parameters.value.value
+      name  = parameter.value.name
+      value = parameter.value.value
     }
   }
 }
