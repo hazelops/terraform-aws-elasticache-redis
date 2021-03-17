@@ -99,3 +99,12 @@ variable "tags" {
   type        = map(string)
   description = "A mapping of tags to assign to all resources."
 }
+
+variable "parameters" {
+  type = list(object({
+    name  = string
+    value = string
+  }))
+  default     = []
+  description = "A list of Redis parameters to apply. Note that parameters may differ from one Redis family to another"
+}

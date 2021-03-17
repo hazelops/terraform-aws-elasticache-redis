@@ -20,6 +20,13 @@ module "elasticache_redis" {
   vpc_id             = module.vpc.vpc_id
   source_cidr_blocks = [module.vpc.vpc_cidr_block]
 
+  parameter = [
+    {
+      name  = "notify-keyspace-events"
+      value = "AKE"
+    }
+  ]
+
   tags = {
     Environment = "prod"
   }
