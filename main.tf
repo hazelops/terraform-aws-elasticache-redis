@@ -97,6 +97,14 @@ resource "aws_elasticache_parameter_group" "default" {
   name        = var.name
   family      = var.family
   description = var.description
+
+  dynamic "parameter" {
+    for_each =  var.parameters
+    content {
+      name  = parameter.value.name
+      value = parameter.value.value
+    }
+  }
 }
 
 # https://www.terraform.io/docs/providers/aws/r/elasticache_subnet_group.html
