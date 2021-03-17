@@ -201,7 +201,7 @@ Bump VERSION file, and run `make release`.
 
 ### Terraform Module Registry
 
-- <https://registry.terraform.io/modules/tmknom/elasticache-redis/aws>
+- <https://registry.terraform.io/modules/hazelops/elasticache-redis/aws>
 
 ## License
 
