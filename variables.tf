@@ -64,6 +64,12 @@ variable "automatic_failover_enabled" {
   description = "Specifies whether a read-only replica will be automatically promoted to read/write primary if the existing primary fails."
 }
 
+variable "multi_az_enabled" {
+  default     = false
+  type        = bool
+  description = "Specifies whether to enable Multi-AZ Support for the replication group. If true, automatic_failover_enabled must also be enabled."
+}
+
 variable "at_rest_encryption_enabled" {
   default     = true
   type        = bool

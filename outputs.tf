@@ -9,7 +9,7 @@ output "elasticache_replication_group_primary_endpoint_address" {
 }
 
 output "elasticache_replication_group_member_clusters" {
-  value       = join("", aws_elasticache_replication_group.default.member_clusters)
+  value       = aws_elasticache_replication_group.default.member_clusters
   description = "The identifiers of all the nodes that are part of this replication group."
 }
 
@@ -49,11 +49,11 @@ output "security_group_description" {
 }
 
 output "security_group_ingress" {
-  value       = join("", aws_security_group.default.ingress)
+  value       = aws_security_group.default.ingress
   description = "The ingress rules of the Redis ElastiCache security group."
 }
 
 output "security_group_egress" {
-  value       = join("", aws_security_group.default.egress)
+  value       = aws_security_group.default.egress
   description = "The egress rules of the Redis ElastiCache security group."
 }
