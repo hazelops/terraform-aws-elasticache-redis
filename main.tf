@@ -64,6 +64,10 @@ resource "aws_elasticache_replication_group" "default" {
   # https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/AutoFailover.html
   automatic_failover_enabled = var.automatic_failover_enabled
 
+  # (Optional) Specifies whether to enable Multi-AZ Support for the replication group. 
+  # If true, automatic_failover_enabled must also be enabled. Defaults to false
+  multi_az_enabled = var.multi_az_enabled
+
   # Redis at-rest encryption is an optional feature to increase data security by encrypting on-disk data during sync
   # and backup or snapshot operations. Because there is some processing needed to encrypt and decrypt the data,
   # enabling at-rest encryption can have some performance impact during these operations.
